@@ -1,0 +1,37 @@
+{
+  "name": "node-red-contrib-esa-api",
+  "version": "0.0.1",
+  "description": "The node accessing for esa.io APO",
+  "main": "esa-api.js",
+  "node-red": {
+    "nodes": {
+      "node-red-esa": "esa-api.js"
+    }
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "node-red": "node-red -u ../../../node-red_dir -p 18801"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/1ft-seabass/node-red-contrib-esa-api.git"
+  },
+  "keywords": [
+    "node-red",
+    "esa.io",
+    "esa"
+  ],
+  "author": {
+    "name": "Seigo Tanaka",
+    "email": "seigo@1ft-seabass.jp",
+    "url": "http://1ft-seabass.jp/"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/1ft-seabass/node-red-contrib-esa-api/issues"
+  },
+  "homepage": "https://github.com/1ft-seabass/node-red-contrib-esa-api#readme",
+  "dependencies": {
+    "@suin/esa-api": "^4.0.0"
+  }
+}
