@@ -1,0 +1,86 @@
+<script type="text/javascript">
+  RED.nodes.registerType('esa-api-config', {
+    category: 'config',
+    defaults: {
+      name: { value: "" }
+    },
+    label: function () {
+      return this.name || "esa-api-config";
+    },
+    credentials: {
+      apitoken: { type: "password" },
+      teamname: { type: "text" },
+    }
+  });
+</script>
+
+<script type="text/x-red" data-template-name="esa-api-config">
+
+  <div class="form-row">
+    <label for="node-config-input-name"><i class="icon-tag"></i> Name</label>
+    <input type="text" id="node-config-input-name" placeholder="Name">
+  </div>
+
+  <div class="form-row">
+    <label for="node-config-input-teamname"><i class="icon-tag"></i> Team Name</label>
+    <input type="password" id="node-config-input-teamname">
+  </div>
+
+  <div class="form-row">
+    <label for="node-config-input-apitoken"><i class="icon-tag"></i> API Token</label>
+    <input type="password" id="node-config-input-apitoken">
+  </div>
+
+</script>
+
+<script type="text/javascript">
+  RED.nodes.registerType('esa-api', {
+    category: 'output',
+    color: '#3FADB5',
+    defaults: {
+      name: { value: "" },
+      functiontype: { value: null },
+      setting: { value: "", type: "esa-api-config" }
+    },
+    inputs: 1,
+    outputs: 1,
+    icon: "arrow-in.png",
+    label: function () {
+      let label_name = "esa api";
+      if(this.name){
+        label_name = this.name;
+      } else if(this.functiontype){
+        label_name = "esa api (" + this.functiontype + ")";
+      }
+      return label_name;
+    }
+  });
+</script>
+
+<script type="text/x-red" data-template-name="esa-api">
+  
+    <div class="form-row">
+      <label for="node-input-setting"><i class="icon-tag"></i> API Setting</label>
+      <input type="text" id="node-input-setting">
+    </div>
+
+
+    <div class="form-row">
+      <label for="node-input-functiontype"><i class="icon-tag"></i> Function Type</span></label>
+      <select type="text" id="node-input-functiontype">
+        <option value="createPost">createPost</option>
+        <option value="getPosts">getPosts</option>
+        <option value="updatePost">updatePost</option>
+        <option value="getPost">getPost</option>
+      </select>
+    </div>
+
+    <div class="form-row">
+        <label for="node-input-name"><i class="icon-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+</script>
+
+<script type="text/x-red" data-help-name="esa-api">
+    <p>Esa API</p>
+</script>

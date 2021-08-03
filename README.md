@@ -1,8 +1,6 @@
 # node-red-contrib-esa-api
 
-The node accessing for IODATA Qwatch network camera API.
-
-The node tested Qwatch TS-NS110W and TS-WRLP. Because they are devices that main committer (1ft-seabass) is using. :)
+The node accessing for [esa](https://esa.io/) API.
 
 ## Install
 
